@@ -5,11 +5,13 @@ import {eye, logo} from '../../assets';
 import Card from '../../components/card';
 import CustomText from '../../components/customText';
 import OnboardInput from '../../components/onboardInput';
+import Icon from 'react-native-vector-icons/dist/AntDesign';
+import CustomButton from '../../components/customButton';
 const Login = () => {
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} resizeMode="contain" />
-      <Card style={{marginTop: 42}}>
+      <Card style={{marginTop: 42, paddingBottom: 40}}>
         <View style={{alignItems: 'center'}}>
           <CustomText
             style={{
@@ -69,11 +71,43 @@ const Login = () => {
           </CustomText>
         </View>
         <OnboardInput
-          placeholder="Choose a preferred username"
-          //   letfIcon={false}
+          placeholder="Your supersafe password "
           rightIcon={true}
           rIconName={eye}
         />
+        <CustomButton style={{marginTop: 20}} textStyle={{fontSize: 16}}>
+          Login now
+        </CustomButton>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: 14,
+            alignItems: 'center',
+          }}>
+          <CustomText
+            style={{
+              color: colors.textColor,
+              fontSize: 14,
+              fontWeight: '500',
+            }}>
+            Not registered yet?
+          </CustomText>
+          <CustomText
+            style={{
+              color: colors.white,
+              fontSize: 14,
+              fontWeight: '500',
+            }}>
+            {' '}
+            Register
+          </CustomText>
+          <Icon
+            name="arrowright"
+            size={14}
+            color={colors.white}
+            style={{paddingLeft: 5}}
+          />
+        </View>
       </Card>
     </View>
   );

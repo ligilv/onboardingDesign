@@ -6,4 +6,5 @@ export const colors = {
   placeholderColor: '#7F8084',
   primaryBtnColor: '#4A96FF',
   buttonTextColor: '#FFFFFF',
+  white: '#FFFFFF',
 };

@@ -28,7 +28,7 @@ const App = () => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.black}}>
       {/* <Text>hello</Text>
-      <Icon name="rocket" size={30} color="#900" />
+      <Icon name="arrowright" size={30} color="#900" />
       <Image
         source={logo}
         style={{width: 200, height: 200, backgroundColor: 'red'}}
