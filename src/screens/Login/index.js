@@ -11,7 +11,7 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} resizeMode="contain" />
-      <Card style={{marginTop: 42, paddingBottom: 40}}>
+      <Card style={{marginTop: 42, paddingBottom: 40, paddingHorizontal: 12}}>
         <View style={{alignItems: 'center'}}>
           <CustomText
             style={{

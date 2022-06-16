@@ -22,18 +22,14 @@ import {logo} from './src/assets';
 import Login from './src/screens/Login';
 import {storage} from './src/utils/mmkvstore';
 import {colors} from './src/constants/colors';
+import Home from './src/screens/Home';
 const App = () => {
   // const username = storage.getString('user.name');
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.black}}>
-      {/* <Text>hello</Text>
-      <Icon name="arrowright" size={30} color="#900" />
-      <Image
-        source={logo}
-        style={{width: 200, height: 200, backgroundColor: 'red'}}
-      /> */}
-      <Login />
+      {/* <Login /> */}
+      <Home />
     </SafeAreaView>
   );
 };
