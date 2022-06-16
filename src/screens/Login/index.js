@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import React from 'react';
 import {colors} from '../../constants/colors';
 import {eye, logo} from '../../assets';
@@ -11,7 +18,9 @@ import {useNavigation} from '@react-navigation/native';
 const Login = () => {
   const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}>
       <Image source={logo} style={styles.logo} resizeMode="contain" />
       <Card style={{marginTop: 42, paddingBottom: 40, paddingHorizontal: 12}}>
         <View style={{alignItems: 'center'}}>
@@ -43,12 +52,7 @@ const Login = () => {
           }}>
           Email or Username
         </CustomText>
-        <OnboardInput
-          placeholder="Enter your email"
-          //   letfIcon={false}
-          //   rightIcon={true}
-          //   rIconName={eye}
-        />
+        <OnboardInput placeholder="Enter your email" />
         <View
           style={{
             flexDirection: 'row',
@@ -114,7 +118,7 @@ const Login = () => {
           />
         </View>
       </Card>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
