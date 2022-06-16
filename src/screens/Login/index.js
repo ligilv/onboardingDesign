@@ -1,16 +1,79 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {colors} from '../../constants/colors';
-import {logo} from '../../assets';
+import {eye, logo} from '../../assets';
 import Card from '../../components/card';
 import CustomText from '../../components/customText';
+import OnboardInput from '../../components/onboardInput';
 const Login = () => {
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} resizeMode="contain" />
-      <Card>
-        <Text style={{color: 'white'}}>index</Text>
-        {/* <CustomText style={{color: 'white'}}>index</CustomText> */}
+      <Card style={{marginTop: 42}}>
+        <View style={{alignItems: 'center'}}>
+          <CustomText
+            style={{
+              color: colors.greyTextColor,
+              fontSize: 14,
+              fontWeight: '500',
+              marginTop: 40,
+            }}>
+            WELCOME BACK
+          </CustomText>
+          <CustomText
+            style={{
+              color: 'white',
+              fontSize: 18,
+              fontWeight: '600',
+              marginTop: 8,
+            }}>
+            Log into your account
+          </CustomText>
+        </View>
+        <CustomText
+          style={{
+            color: colors.textColor,
+            fontSize: 14,
+            fontWeight: '500',
+            marginTop: 34,
+          }}>
+          Email or Username
+        </CustomText>
+        <OnboardInput
+          placeholder="Enter your email"
+          //   letfIcon={false}
+          //   rightIcon={true}
+          //   rIconName={eye}
+        />
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: 16,
+            justifyContent: 'space-between',
+          }}>
+          <CustomText
+            style={{
+              color: colors.textColor,
+              fontSize: 14,
+              fontWeight: '500',
+            }}>
+            Password
+          </CustomText>
+          <CustomText
+            style={{
+              color: colors.textColor,
+              fontSize: 12,
+              fontWeight: '500',
+            }}>
+            Forgot Password?
+          </CustomText>
+        </View>
+        <OnboardInput
+          placeholder="Choose a preferred username"
+          //   letfIcon={false}
+          rightIcon={true}
+          rIconName={eye}
+        />
       </Card>
     </View>
   );

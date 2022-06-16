@@ -21,11 +21,12 @@ import {
 import {logo} from './src/assets';
 import Login from './src/screens/Login';
 import {storage} from './src/utils/mmkvstore';
+import {colors} from './src/constants/colors';
 const App = () => {
   // const username = storage.getString('user.name');
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.black}}>
       {/* <Text>hello</Text>
       <Icon name="rocket" size={30} color="#900" />
       <Image

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primaryBg,
     width: '100%',
     borderWidth: 1,
-    borderColor: 'white',
+    borderColor: '#35373B',
     borderRadius: 8,
     padding: 12,
   },
