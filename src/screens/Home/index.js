@@ -1,13 +1,29 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import CustomText from '../../components/customText';
 import {colors} from '../../constants/colors';
 import Card from '../../components/card';
 import OnboardInput from '../../components/onboardInput';
-import {chatIcon, comment} from '../../assets';
+import {chatIcon, comment, user1} from '../../assets';
+import {mockdata} from './data';
+import CustomButton from '../../components/customButton';
+import PostSection from './postSection';
 const Home = () => {
   return (
-    <ScrollView style={{paddingTop: 80, paddingHorizontal: 16}}>
+    <ScrollView
+      contentContainerStyle={{paddingBottom: 100}}
+      style={{
+        paddingTop: 80,
+        paddingHorizontal: 16,
+        backgroundColor: colors.black,
+      }}>
       <CustomText
         style={{color: colors.white, fontWeight: '500', fontSize: 28}}>
         Hello Jane
@@ -38,7 +54,7 @@ const Home = () => {
           Create post
         </CustomText>
         <OnboardInput
-          backgroundColor={'#191920'}
+          backgroundColor={colors.inputBlackShade}
           placeholder="How are you feeling today?"
           leftIcon={true}
           lIconName={chatIcon}
@@ -50,7 +66,15 @@ const Home = () => {
             // padding: 18,
           }}
         />
+        <CustomButton
+          style={{
+            marginLeft: 244,
+            marginTop: 12,
+          }}>
+          Post
+        </CustomButton>
       </Card>
+      <PostSection />
     </ScrollView>
   );
 };
