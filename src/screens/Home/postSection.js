@@ -21,6 +21,7 @@ const PostSection = () => {
       {mockdata.map(item => {
         return (
           <Card
+            key={item.key}
             style={{
               paddingTop: 24,
               paddingHorizontal: 12,

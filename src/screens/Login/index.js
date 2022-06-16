@@ -7,7 +7,9 @@ import CustomText from '../../components/customText';
 import OnboardInput from '../../components/onboardInput';
 import Icon from 'react-native-vector-icons/dist/AntDesign';
 import CustomButton from '../../components/customButton';
+import {useNavigation} from '@react-navigation/native';
 const Login = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} resizeMode="contain" />
@@ -75,7 +77,10 @@ const Login = () => {
           rightIcon={true}
           rIconName={eye}
         />
-        <CustomButton style={{marginTop: 20}} textStyle={{fontSize: 16}}>
+        <CustomButton
+          style={{marginTop: 20}}
+          textStyle={{fontSize: 16}}
+          onPress={() => navigation.navigate('Home')}>
           Login now
         </CustomButton>
         <View

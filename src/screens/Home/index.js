@@ -54,6 +54,7 @@ const Home = () => {
           Create post
         </CustomText>
         <OnboardInput
+          style={{paddingVertical: 10}}
           backgroundColor={colors.inputBlackShade}
           placeholder="How are you feeling today?"
           leftIcon={true}

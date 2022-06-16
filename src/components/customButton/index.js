@@ -3,9 +3,10 @@ import React from 'react';
 import {colors} from '../../constants/colors';
 import CustomText from '../customText';
 
-const CustomButton = ({children, style, textStyle}) => {
+const CustomButton = ({children, style, textStyle, onPress}) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[
         {
           flexDirection: 'row',
