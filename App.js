@@ -19,15 +19,20 @@ import {
   Image,
 } from 'react-native';
 import {logo} from './src/assets';
+import Login from './src/screens/Login';
+import {storage} from './src/utils/mmkvstore';
 const App = () => {
+  // const username = storage.getString('user.name');
+
   return (
-    <SafeAreaView>
-      <Text>hello</Text>
+    <SafeAreaView style={{flex: 1}}>
+      {/* <Text>hello</Text>
       <Icon name="rocket" size={30} color="#900" />
       <Image
         source={logo}
         style={{width: 200, height: 200, backgroundColor: 'red'}}
-      />
+      /> */}
+      <Login />
     </SafeAreaView>
   );
 };
