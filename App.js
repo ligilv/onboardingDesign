@@ -27,6 +27,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import RootNavigation from './src/navigation';
 import LoginModal from './src/screens/LoginModal';
 import SignupModal from './src/screens/SignupModal';
+import OnBoardingModal from './src/components/OnboardingModal';
 const App = () => {
   // const username = storage.getString('user.name');
 
@@ -34,8 +35,9 @@ const App = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: colors.black}}>
       <NavigationContainer>
         <RootNavigation />
-        <LoginModal />
-        <SignupModal />
+        {/* <LoginModal /> */}
+        {/* <SignupModal /> */}
+        <OnBoardingModal />
       </NavigationContainer>
     </SafeAreaView>
   );

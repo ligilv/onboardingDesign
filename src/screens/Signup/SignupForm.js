@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Button} from 'react-native';
 import React from 'react';
 import {eye, logo} from '../../assets';
 import Card from '../../components/card';
@@ -9,8 +9,11 @@ import Feather from 'react-native-vector-icons/dist/Feather';
 import CustomButton from '../../components/customButton';
 import {colors} from '../../constants/colors';
 import {useNavigation} from '@react-navigation/native';
-const SignupForm = ({isModal}) => {
+const SignupForm = ({isModal, changeModal}) => {
   const navigation = useNavigation();
+  const navModal = () => {
+    changeModal('login');
+  };
   return (
     <Card
       style={{
@@ -133,21 +136,23 @@ const SignupForm = ({isModal}) => {
           }}>
           Already have an account?
         </CustomText>
-        <CustomText
-          style={{
-            color: colors.white,
-            fontSize: 14,
-            fontWeight: '500',
-          }}>
-          {' '}
-          Login
-        </CustomText>
-        <Icon
-          name="arrowright"
-          size={14}
-          color={colors.white}
-          style={{paddingLeft: 5}}
-        />
+        <TouchableOpacity onPress={navModal} style={{flexDirection: 'row'}}>
+          <CustomText
+            style={{
+              color: colors.white,
+              fontSize: 14,
+              fontWeight: '500',
+            }}>
+            {' '}
+            Login
+          </CustomText>
+          <Icon
+            name="arrowright"
+            size={14}
+            color={colors.white}
+            style={{paddingLeft: 5}}
+          />
+        </TouchableOpacity>
       </View>
     </Card>
   );
