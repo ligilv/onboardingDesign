@@ -33,9 +33,6 @@ const App = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: colors.black}}>
       <NavigationContainer>
         <RootNavigation />
-        {/* <LoginModal /> */}
-        {/* <SignupModal /> */}
-        <OnBoardingModal />
       </NavigationContainer>
     </SafeAreaView>
   );

@@ -6,7 +6,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import CustomText from '../../components/customText';
 import {colors} from '../../constants/colors';
 import Card from '../../components/card';
@@ -16,8 +16,14 @@ import {mockdata} from './data';
 import CustomButton from '../../components/customButton';
 import PostSection from './postSection';
 import {useNavigation} from '@react-navigation/native';
+import OnBoardingModal from '../../components/OnboardingModal';
 const Home = () => {
   const navigation = useNavigation();
+  const randomKey = () => {
+    return Math.random();
+  };
+  const random = randomKey();
+  const [modalVisible, setModalVisible] = useState({value: false, key: 0.1});
   return (
     <ScrollView
       contentContainerStyle={{paddingBottom: 100}}
@@ -56,7 +62,7 @@ const Home = () => {
           Create post
         </CustomText>
         <OnboardInput
-          style={{paddingVertical: 10}}
+          inputHeight={54}
           backgroundColor={colors.inputBlackShade}
           placeholder="How are you feeling today?"
           leftIcon={true}
@@ -66,11 +72,14 @@ const Home = () => {
             backgroundColor: colors.primaryBg,
             width: 30,
             height: 30,
-            // padding: 18,
+            padding: 18,
           }}
         />
         <CustomButton
-          // onPress={() => navigation.navigate('LoginModal')}
+          onPress={() => {
+            //hack to open modal each time for ui purpose only
+            setModalVisible({value: true, key: random});
+          }}
           style={{
             marginLeft: 244,
             marginTop: 12,
@@ -79,6 +88,7 @@ const Home = () => {
         </CustomButton>
       </Card>
       <PostSection />
+      <OnBoardingModal visible={modalVisible} />
     </ScrollView>
   );
 };

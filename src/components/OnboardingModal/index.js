@@ -11,28 +11,31 @@ import {
   Button,
 } from 'react-native';
 import {BlurView, VibrancyView} from '@react-native-community/blur';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {colors} from '../../constants/colors';
 import {useNavigation} from '@react-navigation/native';
 import SignupForm from '../../screens/Signup/SignupForm';
 import LoginForm from '../../screens/Login/LoginForm';
-const OnBoardingModal = () => {
+const OnBoardingModal = ({visible}) => {
   const [currentModal, setCurrentModal] = useState('login');
   const navigation = useNavigation();
   const changeModal = modalname => {
     setCurrentModal(modalname);
   };
-  const [isModalOpen, setModalOpen] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
   const modalVisible = value => {
     setModalOpen(value);
   };
+  useEffect(() => {
+    setModalOpen(visible.value);
+  }, [visible]);
   return (
     <Modal
       animationType="slide"
       transparent={true}
       visible={isModalOpen}
       onRequestClose={() => {
-        // this.closeButtonFunction()
+        setModalOpen(false);
       }}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -41,11 +44,7 @@ const OnBoardingModal = () => {
           blurType="dark"
           reducedTransparencyFallbackColor="black"
           style={{
-            //   height: '100%',
             flex: 1,
-
-            //   backgroundColor: 'red',
-            //   opacity: 0.9,
           }}>
           <ScrollView
             contentContainerStyle={{
@@ -65,8 +64,11 @@ const OnBoardingModal = () => {
 
             {currentModal == 'signup' ? (
               <SignupForm
+                //prop to check if its modal or screen
                 isModal={true}
+                //toggle from login/signup
                 changeModal={changeModal}
+                //visibility
                 modalVisible={modalVisible}
               />
             ) : null}

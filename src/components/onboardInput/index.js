@@ -12,6 +12,7 @@ const OnboardInput = ({
   lIconStyle,
   rIconStyle,
   backgroundColor,
+  inputHeight,
 }) => {
   return (
     <View
@@ -21,9 +22,10 @@ const OnboardInput = ({
           borderColor: '#35373B',
           borderWidth: 1.5,
           borderRadius: 4,
-          padding: 12,
+          // padding: 100,
+          paddingHorizontal: 10,
           marginTop: 10,
-          height: 43,
+          height: inputHeight ? inputHeight : 43,
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: backgroundColor ? backgroundColor : colors.primaryBg,
@@ -33,6 +35,7 @@ const OnboardInput = ({
       {leftIcon ? <Image source={lIconName} style={lIconStyle} /> : null}
       <TextInput
         style={{
+          color: colors.textColor,
           flex: 1,
           paddingHorizontal: 10,
           backgroundColor: backgroundColor ? backgroundColor : colors.primaryBg,

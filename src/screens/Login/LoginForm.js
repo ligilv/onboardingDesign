@@ -17,6 +17,9 @@ const LoginForm = ({isModal, changeModal, modalVisible}) => {
   const closeModal = () => {
     modalVisible(false);
   };
+  const navTo = () => {
+    navigation.navigate('Signup');
+  };
   return (
     <Card
       style={{
@@ -33,16 +36,14 @@ const LoginForm = ({isModal, changeModal, modalVisible}) => {
           }}>
           <TouchableOpacity
             style={{
-              width: 20,
-              height: 20,
-              borderRadius: 20 / 2,
+              borderRadius: 15 / 2,
               backgroundColor: colors.black,
+              padding: 1,
               justifyContent: 'center',
               alignItems: 'center',
-              padding: 5,
             }}
             onPress={closeModal}>
-            <Feather name="x" color={colors.white} />
+            <Feather name="x" color={colors.white} size={15} />
           </TouchableOpacity>
         </View>
       ) : null}
@@ -125,7 +126,7 @@ const LoginForm = ({isModal, changeModal, modalVisible}) => {
           Not registered yet?
         </CustomText>
         <TouchableOpacity
-          onPress={isModal ? navModal : null}
+          onPress={isModal ? navModal : navTo}
           style={{flexDirection: 'row'}}>
           <CustomText
             style={{
