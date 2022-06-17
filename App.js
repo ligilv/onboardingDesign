@@ -25,8 +25,6 @@ import {colors} from './src/constants/colors';
 import Home from './src/screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import RootNavigation from './src/navigation';
-import LoginModal from './src/screens/LoginModal';
-import SignupModal from './src/screens/SignupModal';
 import OnBoardingModal from './src/components/OnboardingModal';
 const App = () => {
   // const username = storage.getString('user.name');

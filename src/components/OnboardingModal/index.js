@@ -22,11 +22,15 @@ const OnBoardingModal = () => {
   const changeModal = modalname => {
     setCurrentModal(modalname);
   };
+  const [isModalOpen, setModalOpen] = useState(true);
+  const modalVisible = value => {
+    setModalOpen(value);
+  };
   return (
     <Modal
       animationType="slide"
       transparent={true}
-      visible={true}
+      visible={isModalOpen}
       onRequestClose={() => {
         // this.closeButtonFunction()
       }}>
@@ -52,11 +56,19 @@ const OnBoardingModal = () => {
             }}
             style={{}}>
             {currentModal == 'login' ? (
-              <LoginForm isModal={true} changeModal={changeModal} />
+              <LoginForm
+                isModal={true}
+                changeModal={changeModal}
+                modalVisible={modalVisible}
+              />
             ) : null}
 
             {currentModal == 'signup' ? (
-              <SignupForm isModal={true} changeModal={changeModal} />
+              <SignupForm
+                isModal={true}
+                changeModal={changeModal}
+                modalVisible={modalVisible}
+              />
             ) : null}
           </ScrollView>
         </BlurView>

@@ -9,10 +9,13 @@ import Feather from 'react-native-vector-icons/dist/Feather';
 import CustomButton from '../../components/customButton';
 import {colors} from '../../constants/colors';
 import {useNavigation} from '@react-navigation/native';
-const LoginForm = ({isModal, changeModal}) => {
+const LoginForm = ({isModal, changeModal, modalVisible}) => {
   const navigation = useNavigation();
   const navModal = () => {
     changeModal('signup');
+  };
+  const closeModal = () => {
+    modalVisible(false);
   };
   return (
     <Card
@@ -37,7 +40,8 @@ const LoginForm = ({isModal, changeModal}) => {
               justifyContent: 'center',
               alignItems: 'center',
               padding: 5,
-            }}>
+            }}
+            onPress={closeModal}>
             <Feather name="x" color={colors.white} />
           </TouchableOpacity>
         </View>
@@ -120,7 +124,9 @@ const LoginForm = ({isModal, changeModal}) => {
           }}>
           Not registered yet?
         </CustomText>
-        <TouchableOpacity onPress={navModal} style={{flexDirection: 'row'}}>
+        <TouchableOpacity
+          onPress={isModal ? navModal : null}
+          style={{flexDirection: 'row'}}>
           <CustomText
             style={{
               color: colors.white,
