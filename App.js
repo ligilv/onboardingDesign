@@ -18,17 +18,10 @@ import {
   View,
   Image,
 } from 'react-native';
-import {logo} from './src/assets';
-import Login from './src/screens/Login';
-import {storage} from './src/utils/mmkvstore';
 import {colors} from './src/constants/colors';
-import Home from './src/screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import RootNavigation from './src/navigation';
-import OnBoardingModal from './src/components/OnboardingModal';
 const App = () => {
-  // const username = storage.getString('user.name');
-
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.black}}>
       <NavigationContainer>

@@ -21,61 +21,19 @@ const LoginForm = ({isModal, changeModal, modalVisible}) => {
     navigation.navigate('Signup');
   };
   return (
-    <Card
-      style={{
-        marginTop: 42,
-        paddingBottom: 40,
-        paddingHorizontal: 12,
-      }}>
+    <Card style={styles.card}>
       {isModal ? (
-        <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-          }}>
-          <TouchableOpacity
-            style={{
-              borderRadius: 15 / 2,
-              backgroundColor: colors.black,
-              padding: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-            onPress={closeModal}>
+        <View style={styles.crossContainer}>
+          <TouchableOpacity style={styles.crossTouchable} onPress={closeModal}>
             <Feather name="x" color={colors.white} size={15} />
           </TouchableOpacity>
         </View>
       ) : null}
       <View style={{alignItems: 'center'}}>
-        <CustomText
-          style={{
-            color: colors.greyTextColor,
-            fontSize: 14,
-            fontWeight: '500',
-            marginTop: 40,
-          }}>
-          WELCOME BACK
-        </CustomText>
-        <CustomText
-          style={{
-            color: 'white',
-            fontSize: 18,
-            fontWeight: '600',
-            marginTop: 8,
-          }}>
-          Log into your account
-        </CustomText>
+        <CustomText style={styles.welcomeText}>WELCOME BACK</CustomText>
+        <CustomText style={styles.loginText}>Log into your account</CustomText>
       </View>
-      <CustomText
-        style={{
-          color: colors.textColor,
-          fontSize: 14,
-          fontWeight: '500',
-          marginTop: 34,
-        }}>
-        Email or Username
-      </CustomText>
+      <CustomText style={styles.email}>Email or Username</CustomText>
       <OnboardInput placeholder="Enter your email" />
       <View
         style={{
@@ -91,14 +49,7 @@ const LoginForm = ({isModal, changeModal, modalVisible}) => {
           }}>
           Password
         </CustomText>
-        <CustomText
-          style={{
-            color: colors.textColor,
-            fontSize: 12,
-            fontWeight: '500',
-          }}>
-          Forgot Password?
-        </CustomText>
+        <CustomText style={styles.passwordText}>Forgot Password?</CustomText>
       </View>
       <OnboardInput
         placeholder="Your supersafe password "
@@ -128,15 +79,7 @@ const LoginForm = ({isModal, changeModal, modalVisible}) => {
         <TouchableOpacity
           onPress={isModal ? navModal : navTo}
           style={{flexDirection: 'row'}}>
-          <CustomText
-            style={{
-              color: colors.white,
-              fontSize: 14,
-              fontWeight: '500',
-            }}>
-            {' '}
-            Register
-          </CustomText>
+          <CustomText style={styles.registerText}> Register</CustomText>
           <Icon
             name="arrowright"
             size={14}
@@ -151,4 +94,50 @@ const LoginForm = ({isModal, changeModal, modalVisible}) => {
 
 export default LoginForm;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  card: {
+    marginTop: 42,
+    paddingBottom: 40,
+    paddingHorizontal: 12,
+  },
+  crossContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  crossTouchable: {
+    borderRadius: 15 / 2,
+    backgroundColor: colors.black,
+    padding: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  welcomeText: {
+    color: colors.greyTextColor,
+    fontSize: 14,
+    fontWeight: '500',
+    marginTop: 40,
+  },
+  loginText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '600',
+    marginTop: 8,
+  },
+  email: {
+    color: colors.textColor,
+    fontSize: 14,
+    fontWeight: '500',
+    marginTop: 34,
+  },
+  passwordText: {
+    color: colors.textColor,
+    fontSize: 12,
+    fontWeight: '500',
+  },
+  registerText: {
+    color: colors.white,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+});

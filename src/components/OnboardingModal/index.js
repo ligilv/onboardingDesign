@@ -13,12 +13,10 @@ import {
 import {BlurView, VibrancyView} from '@react-native-community/blur';
 import React, {useEffect, useState} from 'react';
 import {colors} from '../../constants/colors';
-import {useNavigation} from '@react-navigation/native';
 import SignupForm from '../../screens/Signup/SignupForm';
 import LoginForm from '../../screens/Login/LoginForm';
 const OnBoardingModal = ({visible}) => {
   const [currentModal, setCurrentModal] = useState('login');
-  const navigation = useNavigation();
   const changeModal = modalname => {
     setCurrentModal(modalname);
   };

@@ -21,84 +21,27 @@ const SignupForm = ({isModal, changeModal, modalVisible}) => {
     modalVisible(false);
   };
   return (
-    <Card
-      style={{
-        marginTop: 42,
-        paddingBottom: 40,
-        paddingHorizontal: 12,
-      }}>
+    <Card style={styles.card}>
       {isModal ? (
-        <View
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-          }}>
-          <TouchableOpacity
-            style={{
-              borderRadius: 15 / 2,
-              backgroundColor: colors.black,
-              padding: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-            onPress={closeModal}>
+        <View style={styles.crossContainer}>
+          <TouchableOpacity style={styles.crossTouchable} onPress={closeModal}>
             <Feather name="x" color={colors.white} size={15} />
           </TouchableOpacity>
         </View>
       ) : null}
       <View style={{alignItems: 'center'}}>
-        <CustomText
-          style={{
-            color: colors.greyTextColor,
-            fontSize: 14,
-            fontWeight: '500',
-            marginTop: 40,
-          }}>
-          SIGN UP
-        </CustomText>
-        <CustomText
-          style={{
-            color: 'white',
-            fontSize: 18,
-            fontWeight: '600',
-            marginTop: 8,
-          }}>
+        <CustomText style={styles.signUpText}>SIGN UP</CustomText>
+        <CustomText style={styles.createAccountText}>
           Create an account to continue
         </CustomText>
       </View>
-      <CustomText
-        style={{
-          color: colors.textColor,
-          fontSize: 14,
-          fontWeight: '500',
-          marginTop: 34,
-        }}>
-        Email
-      </CustomText>
+      <CustomText style={styles.emailText}>Email</CustomText>
       <OnboardInput placeholder="Enter your email" />
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: 16,
-          justifyContent: 'space-between',
-        }}>
-        <CustomText
-          style={{
-            color: colors.textColor,
-            fontSize: 14,
-            fontWeight: '500',
-          }}>
-          Username
-        </CustomText>
+      <View style={styles.userNameText}>
+        <CustomText style={styles.userText}>Username</CustomText>
       </View>
       <OnboardInput placeholder="Choose a preferred username" />
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: 16,
-          justifyContent: 'space-between',
-        }}>
+      <View style={styles.passwordView}>
         <CustomText
           style={{
             color: colors.textColor,
@@ -127,12 +70,7 @@ const SignupForm = ({isModal, changeModal, modalVisible}) => {
         onPress={() => navigation.navigate('Home')}>
         Continue
       </CustomButton>
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: 14,
-          alignItems: 'center',
-        }}>
+      <View style={styles.redirectTextView}>
         <CustomText
           style={{
             color: colors.textColor,
@@ -144,15 +82,7 @@ const SignupForm = ({isModal, changeModal, modalVisible}) => {
         <TouchableOpacity
           onPress={isModal ? navModal : navTo}
           style={{flexDirection: 'row'}}>
-          <CustomText
-            style={{
-              color: colors.white,
-              fontSize: 14,
-              fontWeight: '500',
-            }}>
-            {' '}
-            Login
-          </CustomText>
+          <CustomText style={styles.btnText}> Login</CustomText>
           <Icon
             name="arrowright"
             size={14}
@@ -167,4 +97,65 @@ const SignupForm = ({isModal, changeModal, modalVisible}) => {
 
 export default SignupForm;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  card: {
+    marginTop: 42,
+    paddingBottom: 40,
+    paddingHorizontal: 12,
+  },
+  crossContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  crossTouchable: {
+    borderRadius: 15 / 2,
+    backgroundColor: colors.black,
+    padding: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  signUpText: {
+    color: colors.greyTextColor,
+    fontSize: 14,
+    fontWeight: '500',
+    marginTop: 40,
+  },
+  createAccountText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '600',
+    marginTop: 8,
+  },
+  emailText: {
+    color: colors.textColor,
+    fontSize: 14,
+    fontWeight: '500',
+    marginTop: 34,
+  },
+  userNameText: {
+    flexDirection: 'row',
+    marginTop: 16,
+    justifyContent: 'space-between',
+  },
+  userText: {
+    color: colors.textColor,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  passwordView: {
+    flexDirection: 'row',
+    marginTop: 16,
+    justifyContent: 'space-between',
+  },
+  redirectTextView: {
+    flexDirection: 'row',
+    marginTop: 14,
+    alignItems: 'center',
+  },
+  btnText: {
+    color: colors.white,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+});
