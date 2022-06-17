@@ -10,7 +10,6 @@ const RootNavigation = () => {
       screenOptions={{headerShown: false}}
       initialRouteName="Login">
       <Stack.Screen name="Login" component={Login} />
-
       <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );

@@ -15,7 +15,9 @@ import {chatIcon, comment, user1} from '../../assets';
 import {mockdata} from './data';
 import CustomButton from '../../components/customButton';
 import PostSection from './postSection';
+import {useNavigation} from '@react-navigation/native';
 const Home = () => {
+  const navigation = useNavigation();
   return (
     <ScrollView
       contentContainerStyle={{paddingBottom: 100}}
@@ -68,6 +70,7 @@ const Home = () => {
           }}
         />
         <CustomButton
+          // onPress={() => navigation.navigate('LoginModal')}
           style={{
             marginLeft: 244,
             marginTop: 12,
