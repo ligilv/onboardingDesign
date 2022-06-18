@@ -1,10 +1,5 @@
-Sorry Initially I pushed code to my repository.
-Please find the link to same with commits
 
-https://gh.fakev.cn/ligilv/onboardingDesign
-
-
-
+Onboarding design React native
 
 https://user-images.githubusercontent.com/46999151/174337665-427ea4e3-7442-42a2-972b-53e1e070f7cb.mov
 
